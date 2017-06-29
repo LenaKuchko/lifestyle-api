@@ -1,8 +1,3 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-exports.apiKey = "e2777152d3c1e74ad0d5c16ad5800a55";
-exports.apiId = "c37ad869";
-
-},{}],2:[function(require,module,exports){
 var apiKey = require('./../.env').apiKey;
 var apiId = require('./../.env').apiId;
 
@@ -44,34 +39,3 @@ Food.prototype.getAllNutrition = function(searchFood, displayNutrition){
 
 
 exports.foodModule = Food;
-
-},{"./../.env":1}],3:[function(require,module,exports){
-var Food = require('./../js/food.js').foodModule;
-
-var currentFood = new Food();
-
-var displayOne = function (selectedFood) {
-  $("#nutrition").text("Calories: " + selectedFood.calories + "Fat: " + selectedFood.fat + "Cholesterol: " + selectedFood.cholesterol + "Sodium: " + selectedFood.sodium + "Carbs: " + selectedFood.carbs + "Fiber: " + selectedFood.fiber + "Sugars: " + selectedFood.sugars + "Proteins: " + selectedFood.proteins);
-};
-
-var displayNutrition = function(nutrition) {
-  for(var i = 0; i < nutrition.length; i++){
-    $(".output").append("<div class = 'info' id=" + nutrition[i].id + ">" + nutrition[i].brandName + " " + nutrition[i].name + "</div>");
-  }
-  $(".info").click(function() {
-    var clicked = $(this)[0].id;
-    console.log(clicked);
-    currentFood.getNutritionSingle(clicked, displayOne);
-  });
-};
-
-$(document).ready(function() {
-  $("#search").submit(function(event) {
-    event.preventDefault();
-    var searchFood = $("#search-food").val();
-    currentFood.getAllNutrition(searchFood, displayNutrition);
-  });
-});
-
-
-},{"./../js/food.js":2}]},{},[3]);
