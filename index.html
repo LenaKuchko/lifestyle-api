@@ -6,6 +6,12 @@
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <title></title>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
   </head>
   <body>
     <h1>Food</h1>
@@ -44,5 +50,28 @@
     <div class="yelp-restaurants">
 
     </div>
+
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -35.363, lng: 11.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZDSqd_4mdDWEBCcH2ig8ZtGlpv7XgeMw&callback=initMap&libraries=places">
+    </script>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <ul id="results">
+
+    </ul>
   </body>
 </html>

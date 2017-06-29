@@ -8,7 +8,7 @@ var displayRecipeDetails = function(recipe) {
   for (var i = 0; i < recipe.ingredients.length; i++) {
     $("#recipe-ingredients").append("<li>" + recipe.ingredients[i] + "</li>");
   }
-}
+};
 
 var displayAllRecipes = function(allRecipes){
   console.log(allRecipes);
