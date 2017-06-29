@@ -17,10 +17,19 @@ var displayNutrition = function(nutrition) {
   });
 };
 
+// var displayRecipe = function(recipes) {
+//   // for(var i = 0; i < recipes.length; i++){
+//   //
+//   // }
+//   console.log(recipes);
+// }
+
 $(document).ready(function() {
   $("#search").submit(function(event) {
     event.preventDefault();
     var searchFood = $("#search-food").val();
     currentFood.getAllNutrition(searchFood, displayNutrition);
+
   });
+  // currentFood.getRecipe();
 });

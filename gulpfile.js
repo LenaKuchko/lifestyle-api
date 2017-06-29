@@ -22,7 +22,7 @@ var lib = require('bower-files')({
 var buildProduction = utilities.env.production;
 
 gulp.task('jsBrowserify', function() {
-  return browserify({ entries: ['./js/lifestyle-interface.js'] })
+  return browserify({ entries: ['./js/food-interface.js'] })
     .bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest('./build/js'));
